@@ -1,3 +1,11 @@
+MoodAnalyzer/.vs/
+MoodAnalyzer/obj/
+MoodAnalyzer/MoodAnalyzer/MoodAnalyzer.csproj
+MoodAnalyzer/MoodAnalyzerTest/obj/
+MoodAnalyzer/MoodAnalyzer/obj/
+MoodAnalyzer/MoodAnalyzerTest/MoodAnalyzerTest.csproj
+
+
 # Prerequisites
 *.d
 
