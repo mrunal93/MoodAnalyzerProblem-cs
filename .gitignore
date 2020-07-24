@@ -4,6 +4,8 @@ MoodAnalyzer/MoodAnalyzer/MoodAnalyzer.csproj
 MoodAnalyzer/MoodAnalyzerTest/obj/
 MoodAnalyzer/MoodAnalyzer/obj/
 MoodAnalyzer/MoodAnalyzerTest/MoodAnalyzerTest.csproj
+MoodAnalyzer/MoodAnalyzer/bin/
+MoodAnalyzer/MoodAnalyzerTest/bin/
 
 
 # Prerequisites
