@@ -20,6 +20,9 @@ namespace MoodAnalyzer
         {
             try
             {
+                if (message.Length == 0)
+                    throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.EnterEmpty, "Please Enter Proper Message");
+                
                 if (message.Contains("Sad"))
 
                     return "Sad";
@@ -27,7 +30,7 @@ namespace MoodAnalyzer
             }
             catch(NullReferenceException)
             {
-                return "Happy";
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.EnterNull, "Please Entered Proper Mood");
             }
         }
     }
