@@ -1,4 +1,6 @@
+using MoodAnalyzer;
 using NUnit.Framework;
+using System.Reflection.Metadata;
 
 namespace MoodAnalyzerTest
 {
@@ -23,12 +25,30 @@ namespace MoodAnalyzerTest
 
         }
         [Test]
-        public void GivenSadMessageNull_WhenAnalyse_ShouldReturnHappy()
+        public void GivenSadMessageNull_WhenAnalyse_ShouldThrowException()
         {
-            MoodAnalyzer.MoodAnalysis moodAnalysis = new MoodAnalyzer.MoodAnalysis();
-            string mood = moodAnalysis.AnalysisOfMood(null);
-            Assert.AreEqual("Happy", mood);
-
+            try
+            {
+                MoodAnalyzer.MoodAnalysis moodAnalysis = new MoodAnalyzer.MoodAnalysis();
+                string mood = moodAnalysis.AnalysisOfMood(null);
+            }
+            catch(MoodAnalyzerException e)
+            {
+                Assert.AreEqual(MoodAnalyzerException.ExceptionType.EnterNull, e.Type);
+            }
+        }
+        [Test]
+        public void GivenSadMessageEmpty_WhenAnalyse_ShouldThrowException()
+        {
+            try
+            {
+                MoodAnalyzer.MoodAnalysis moodAnalysis = new MoodAnalyzer.MoodAnalysis();
+                string mood = moodAnalysis.AnalysisOfMood(" ");
+            }
+            catch (MoodAnalyzerException e)
+            {
+                Assert.AreEqual(MoodAnalyzerException.ExceptionType.EnterEmpty, e.Type);
+            }
         }
     }
 }
